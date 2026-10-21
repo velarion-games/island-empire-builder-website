@@ -21,8 +21,8 @@
 .facts li>span+span::before{content:"·";color:var(--light);margin:0 10px}
 .facts .tags{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mist)}
 .facts .platforms span{display:inline-flex;align-items:center;gap:7px;color:var(--linen)}
-.facts .platforms em{font-style:italic;margin-left:12px}
-.facts .platforms em::before{content:"— ";color:var(--light)}
+.facts em{font-style:italic;margin-left:12px}
+.facts em::before{content:"— ";color:var(--light)}
 .facts .os{width:15px;height:15px;flex:0 0 auto}
 .hero>.mist{-webkit-mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%);mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%)}
 
