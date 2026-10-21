@@ -34,5 +34,5 @@ assets/img/           social preview card and icons
 
 - **Unlisted for now.** Every page has `<meta name="robots" content="noindex">` while the title isn't final. Remove those lines to let search engines index the site.
 - **Newsletter.** The forms use the same EmailOctopus list and form as velarion.games. EmailOctopus's embed only supports one form per page, so `newsletter.js` drives one hidden copy of it from our own forms. The embed and Google reCAPTCHA load only when someone starts using a form.
-- **No third-party requests on page load.** Fonts are self-hosted. Keep it that way, or update `privacy.html`.
+- **Third-party requests.** Fonts are self-hosted. The only third-party script on page load is Umami (cookieless visitor stats, counts only on secondsailinggame.com). Update `privacy.html` if that changes.
 - **Shared chrome** (nav, footer, newsletter) is repeated in each HTML page. Change all three pages together.
