@@ -1,12 +1,11 @@
 /* Inner pages (roadmap, privacy): a Deep Adriatic header band with the nav,
    the page title and a short standfirst, then the page body on Sail linen. */
 
-.in{max-width:1080px}
 header.dark{position:relative}
 header>.mist{-webkit-mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%);mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%)}
 .nav{position:relative}
 .nav>.in,.head>.in,.page-body>.in{position:relative;z-index:2}
-.nav .in{border-bottom:1px solid var(--rule-dark);padding-block:18px}
+.nav{border-bottom-color:var(--rule-dark)}
 
 .head .in{padding-block:72px 64px;display:grid;gap:18px}
 .head .label{margin:0}

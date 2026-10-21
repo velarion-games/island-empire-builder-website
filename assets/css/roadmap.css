@@ -4,7 +4,7 @@
 
 /* the route */
 .route{position:relative;padding-block:72px 96px}
-.log{list-style:none;margin:0;padding:0;display:grid}
+.log{list-style:none;margin:0;padding:0;display:grid;max-width:1000px}
 .stop{display:grid;grid-template-columns:150px 48px minmax(0,1fr);column-gap:20px}
 .when{text-align:right;padding-top:2px;font:600 15px/1.3 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--olive-ink);font-variant-numeric:tabular-nums}
 .ahead .when{color:var(--clay-ink)}
