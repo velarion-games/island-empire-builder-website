@@ -3,9 +3,10 @@
 
 header.dark{position:relative}
 header>.mist{-webkit-mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%);mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%)}
-.nav{position:relative}
+header.dark{padding-top:calc(57px + env(safe-area-inset-top,0px))}
+@media (max-width:520px){header.dark{padding-top:calc(55px + env(safe-area-inset-top,0px))}}
 .nav>.in,.head>.in,.page-body>.in{position:relative;z-index:2}
-.nav{border-bottom-color:var(--rule-dark)}
+.nav:not(.solid){border-bottom-color:var(--rule-dark)}
 
 .head .in{padding-block:72px 64px;display:grid;gap:18px}
 .head .label{margin:0}

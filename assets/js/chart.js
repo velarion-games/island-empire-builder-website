@@ -1,4 +1,12 @@
-// Rhumb lines and chart marks behind the whole page, shared by every page.
+// Shared by every page: the sticky header, and the rhumb lines and chart marks behind the page.
+
+// the fixed header stays see-through over the dark header band and turns solid once
+// the band has scrolled out from under it (on the landing page this also shows the wordmark)
+{
+const nav=document.querySelector(".nav"),band=nav&&nav.closest("header");
+if(band)new IntersectionObserver(([e])=>nav.classList.toggle("solid",!e.isIntersecting),{rootMargin:`-${nav.offsetHeight}px 0px 0px 0px`}).observe(band);
+}
+
 // Needs #top (the title the web centres on) and .foot (where the web ends).
 // rhumb lines: a centre rose behind the title and 16 roses on a circle around it,
 // each sending 32 winds (main / half / quarter coloured like a portolan chart)

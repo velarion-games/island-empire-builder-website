@@ -1,10 +1,4 @@
-// Landing page: solid header once the hero has scrolled away, and the voyage line.
-
-// header shows the wordmark only once the hero has scrolled out from under it
-{
-const nav=document.getElementById("nav"),hero=document.querySelector(".hero");
-new IntersectionObserver(([e])=>nav.classList.toggle("solid",!e.isIntersecting),{rootMargin:`-${nav.offsetHeight}px 0px 0px 0px`}).observe(hero);
-}
+// Landing page: the voyage line.
 
 // voyage line: from the intro down through the gap beside each feature to the footer,
 // solid where the reader has already sailed, a small ship at the reader's place
