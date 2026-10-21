@@ -2,7 +2,7 @@
    the page title and a short standfirst, then the page body on Sail linen. */
 
 header.dark{position:relative}
-header>.mist .a{background-image:url("../img/mist/light-a-low.svg")}header>.mist .b{background-image:url("../img/mist/light-b-low.svg")}
+header>.mist{-webkit-mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%);mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%)}
 header.dark{padding-top:calc(57px + env(safe-area-inset-top,0px))}
 @media (max-width:520px){header.dark{padding-top:calc(55px + env(safe-area-inset-top,0px))}}
 .nav>.in,.head>.in,.page-body>.in{position:relative;z-index:2}
@@ -17,7 +17,7 @@ header.dark{padding-top:calc(57px + env(safe-area-inset-top,0px))}
 .legend svg{width:34px;height:10px}
 
 .page-body{position:relative}
-.page-body>.mist .a{background-image:url("../img/mist/haze-a-page.svg")}.page-body>.mist .b{background-image:url("../img/mist/haze-b-page.svg")}
+.page-body>.mist{-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 30%,transparent 70%,#000 100%);mask-image:linear-gradient(to bottom,#000 0%,transparent 30%,transparent 70%,#000 100%)}
 @media (max-width:720px){.head .in{padding-block:48px 44px}}
 
 /* plain reading text */
@@ -31,5 +31,4 @@ header.dark{padding-top:calc(57px + env(safe-area-inset-top,0px))}
 .prose a{text-underline-offset:3px;text-decoration-color:var(--clay)}
 .prose .updated{font-size:15px;margin-top:40px}
 .head p,.legend{text-shadow:0 0 2px var(--adriatic),0 0 6px var(--adriatic),0 0 14px var(--adriatic),0 0 24px rgba(23,62,74,.85)}
-/* .8 of the usual mist, set on each layer so the bank needs no offscreen pass */
-header>.mist .a{opacity:.4}header>.mist .b{opacity:.28}
+header>.mist{opacity:.8}
