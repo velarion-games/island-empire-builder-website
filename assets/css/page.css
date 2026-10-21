@@ -1,0 +1,34 @@
+/* Inner pages (roadmap, privacy): a Deep Adriatic header band with the nav,
+   the page title and a short standfirst, then the page body on Sail linen. */
+
+.in{max-width:1080px}
+header.dark{position:relative}
+header>.mist{-webkit-mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%);mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%)}
+.nav{position:relative}
+.nav>.in,.head>.in,.page-body>.in{position:relative;z-index:2}
+.nav .in{border-bottom:1px solid var(--rule-dark);padding-block:18px}
+
+.head .in{padding-block:72px 64px;display:grid;gap:18px}
+.head .label{margin:0}
+.head h1{font:600 clamp(48px,7vw,96px)/1 var(--f-title);margin:0;letter-spacing:.01em}
+.head p{font:400 clamp(19px,1.7vw,22px)/1.55 var(--f-read);margin:0;max-width:36em;color:var(--linen)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:10px;font-size:14px;color:var(--linen)}
+.legend span{display:inline-flex;align-items:center;gap:10px}
+.legend svg{width:34px;height:10px}
+
+.page-body{position:relative}
+.page-body>.mist{-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 30%,transparent 70%,#000 100%);mask-image:linear-gradient(to bottom,#000 0%,transparent 30%,transparent 70%,#000 100%)}
+@media (max-width:720px){.head .in{padding-block:48px 44px}}
+
+/* plain reading text */
+.prose{padding-block:64px 88px}
+.prose .in{max-width:760px}
+.prose h2{font:600 clamp(26px,2.6vw,32px)/1.15 var(--f-title);margin:44px 0 10px}
+.prose h2:first-child{margin-top:0}
+.prose p,.prose li{color:var(--ink-2)}
+.prose p{margin:0 0 14px}
+.prose ul{margin:0 0 14px;padding-left:22px}
+.prose a{text-underline-offset:3px;text-decoration-color:var(--clay)}
+.prose .updated{font-size:15px;margin-top:40px}
+.head p,.legend{text-shadow:0 0 2px var(--adriatic),0 0 6px var(--adriatic),0 0 14px var(--adriatic),0 0 24px rgba(23,62,74,.85)}
+header>.mist{opacity:.8}

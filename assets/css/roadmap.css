@@ -1,0 +1,50 @@
+/* Roadmap. Layout: Deep Adriatic header band, then one sailing route down the page on Sail linen:
+   past waypoints on a solid clay wake, a ship at "now", targets ahead on a dashed course.
+   Shared chrome lives in site.css, the header band in page.css. */
+
+/* the route */
+.route{position:relative;padding-block:72px 96px}
+.log{list-style:none;margin:0;padding:0;display:grid}
+.stop{display:grid;grid-template-columns:150px 48px minmax(0,1fr);column-gap:20px}
+.when{text-align:right;padding-top:2px;font:600 15px/1.3 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--olive-ink);font-variant-numeric:tabular-nums}
+.ahead .when{color:var(--clay-ink)}
+.track{position:relative;display:flex;justify-content:center}
+.track::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:0;border-left:2px solid var(--clay);transform:translateX(-1px)}
+.ahead .track::before{border-left:2px dashed rgba(23,62,74,.4)}
+.stop:last-child .track::before{bottom:auto;height:14px}
+.stop:first-child .track::before{top:14px}
+.dot{position:relative;z-index:1;margin-top:6px;width:16px;height:16px;border-radius:50%;background:var(--clay);border:3px solid var(--linen);box-shadow:0 0 0 1.5px var(--clay)}
+.ahead .dot{background:var(--linen);box-shadow:0 0 0 1.5px var(--adriatic)}
+.stop:last-child .dot{width:22px;height:22px;margin-top:3px;background:var(--light);box-shadow:0 0 0 1.5px var(--adriatic)}
+.body{padding-bottom:44px;min-width:0}
+.body h2,.body h3{font:600 clamp(24px,2.4vw,30px)/1.15 var(--f-title);margin:0 0 6px;text-wrap:balance}
+.body p{margin:0;max-width:34em;color:var(--ink-2)}
+
+/* now: the ship on the line */
+.now .track::before{background:linear-gradient(var(--clay) 0 50%,transparent 50%);border:0;width:2px}
+.now .track::after{content:"";position:absolute;top:50%;bottom:0;left:50%;border-left:2px dashed rgba(23,62,74,.4);transform:translateX(-1px)}
+.ship{position:relative;z-index:1;width:44px;height:44px;margin-top:-6px;background:var(--linen)}
+.ship path{fill:var(--adriatic)}.ship .sail{fill:var(--linen);stroke:var(--adriatic);stroke-width:1.4}.ship .sail2{fill:var(--light);stroke:var(--adriatic);stroke-width:1.2}
+.now .body{background:var(--limestone);padding:22px 26px 24px;margin-bottom:44px;border-radius:2px}
+.tag{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--clay-ink);border:1px solid currentColor;padding:2px 9px;border-radius:2px;margin-bottom:10px}
+.now .when{color:var(--adriatic)}
+
+.sect{grid-column:1/-1;display:grid;grid-template-columns:150px 48px minmax(0,1fr);column-gap:20px}
+.sect .label{grid-column:3;margin:0 0 22px}
+.sect .track{grid-column:2}
+
+.note{margin-top:28px;display:grid;grid-template-columns:150px 48px minmax(0,1fr);column-gap:20px}
+.note p{grid-column:3;margin:0;font-size:15px;color:var(--ink-2);max-width:36em}
+
+
+@media (max-width:720px){
+  .route{padding-block:44px 64px}
+  .stop,.sect,.note{grid-template-columns:28px minmax(0,1fr);column-gap:14px}
+  .when{grid-column:2;grid-row:1;text-align:left;font-size:13.5px;margin-bottom:4px}
+  .track{grid-column:1;grid-row:1/span 2}
+  .body{grid-column:2;grid-row:2}
+  .sect .label,.note p{grid-column:2}
+  .sect .track{grid-column:1}
+  .ship{width:30px;height:30px;margin-top:-2px}
+  .now .body{padding:16px 18px 18px}
+}

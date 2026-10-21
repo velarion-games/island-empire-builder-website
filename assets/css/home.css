@@ -1,0 +1,145 @@
+/* Landing page. Layout: Deep Adriatic hero, intro on Sail linen, the quote on Deep Adriatic,
+   five feature sections alternating Sail linen / Limestone, a roadmap band, then the Deep
+   Adriatic footer with the final newsletter CTA. Shared chrome lives in site.css. */
+
+.nav .wordmark{opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .3s,transform .3s,visibility .3s}
+.nav.solid .wordmark{opacity:1;visibility:visible;transform:none}
+
+/* hero */
+.hero{position:relative;min-height:min(720px,86vh);display:flex;align-items:flex-end}
+.hero>.in{width:100%;padding-block:140px 72px;position:relative;z-index:2}
+.hero>.in>*:not(.hero-chart):not(.chart-mist){position:relative;z-index:1}
+.hero h1{font:600 clamp(54px,9.4vw,140px)/.95 var(--f-title);letter-spacing:.02em;margin:0;text-wrap:balance}
+.inscr{font:500 italic 19px/1 var(--f-title);letter-spacing:.06em;color:var(--mist);margin:0 0 22px;display:flex;align-items:center;gap:16px}
+.inscr::after{content:"";height:1px;width:56px;background:currentColor;opacity:.5}
+.motto{display:flex;align-items:center;gap:18px;margin-top:22px}
+.motto::before{content:"";flex:0 0 72px;height:2px;background:var(--light)}
+.motto em{font:500 italic clamp(22px,2.2vw,30px)/1.2 var(--f-title);color:var(--linen)}
+.hero p{max-width:34em;margin:24px 0 22px;font-size:19px;line-height:1.55}
+.facts{list-style:none;margin:0 0 30px;padding:0;display:grid;gap:8px;font-size:15px;color:var(--linen-mute)}
+.facts li{display:flex;flex-wrap:wrap;align-items:center;gap:4px 0}
+.facts li>span+span::before{content:"·";color:var(--light);margin:0 10px}
+.facts .tags{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mist)}
+.facts .platforms span{display:inline-flex;align-items:center;gap:7px;color:var(--linen)}
+.facts .platforms em{font-style:italic;margin-left:12px}
+.facts .platforms em::before{content:"— ";color:var(--light)}
+.facts .os{width:15px;height:15px;flex:0 0 auto}
+.hero>.mist{-webkit-mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%);mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%)}
+
+/* hero chart: the archipelago drawn portolan-style in the hero's open right half */
+.hero-chart{position:absolute;right:max(24px,env(safe-area-inset-right,0px));bottom:64px;width:min(40%,470px);z-index:0;pointer-events:none;overflow:visible}
+.hero-chart .land{stroke:var(--linen);stroke-width:1.2;stroke-opacity:.85}
+.hero-chart .ol{fill:var(--olive);fill-opacity:.5}.hero-chart .cl{fill:var(--clay);fill-opacity:.42}
+.hero-chart .gd{fill:var(--light);fill-opacity:.3}.hero-chart .ms{fill:var(--mist);fill-opacity:.25}
+.hero-chart .in2{fill:none;stroke:var(--linen);stroke-width:.6;stroke-opacity:.28}
+.hero-chart .sh{fill:none;stroke:var(--mist);stroke-width:.8;stroke-opacity:.45;stroke-dasharray:1 3}
+.hero-chart .route{fill:none;stroke:var(--light);stroke-width:1.1;stroke-opacity:.7;stroke-dasharray:4 5}
+.hero-chart .port{fill:var(--clay);stroke:var(--linen);stroke-width:.8}
+.hero-chart .nm{font:500 italic 15px var(--f-title);fill:var(--linen);fill-opacity:.9;letter-spacing:.04em}
+.hero-chart .hz{stroke:var(--linen);stroke-width:.9;stroke-opacity:.55}
+.hero-chart .sd{fill:var(--linen);fill-opacity:.5}
+.hero-chart .rose{fill:none;stroke:var(--linen);stroke-width:.8;stroke-opacity:.6}
+.hero-chart .rose.k{stroke:var(--light);stroke-opacity:.9}
+.hero-chart .rosec{fill:none;stroke:var(--linen);stroke-width:.6;stroke-opacity:.35}
+.hero-chart .sb{fill:none;stroke:var(--linen);stroke-width:.7;stroke-opacity:.55}.hero-chart .sb.f{fill:var(--linen);fill-opacity:.4}
+.hero-chart .ship{offset-rotate:0deg;animation:sail 26s ease-in-out infinite alternate}
+.hero-chart .ship path{fill:var(--linen);fill-opacity:.85}.hero-chart .ship .sail{fill:var(--linen)}.hero-chart .ship .sail2{fill:var(--light)}
+@keyframes sail{from{offset-distance:4%}to{offset-distance:96%}}
+/* a mist bank drifting through the chart's islands, under the hero text */
+.chart-mist{position:absolute;right:0;bottom:30px;width:min(48%,560px);height:360px;z-index:0;pointer-events:none;overflow:hidden;
+  -webkit-mask-image:radial-gradient(closest-side,#000 35%,transparent);mask-image:radial-gradient(closest-side,#000 35%,transparent)}
+.chart-mist i{position:absolute;inset:0 auto 0 0;width:calc(100% + 1200px);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004 0.014' numOctaves='4' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .95 0 0 0 0 .92 0 0 0 0 .87 1.7 0 0 0 -0.72'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");opacity:.55;animation:mist-drift 70s linear infinite}
+@media (max-width:1100px){.hero-chart,.chart-mist{display:none}}
+
+/* intro */
+.intro{position:relative;padding-block:40px 110px}
+.intro>.in{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center}
+.lede{font:400 clamp(22px,1.9vw,24px)/1.55 var(--f-read);font-optical-sizing:auto;margin:0;text-wrap:pretty}
+.film{position:relative;margin:0}
+.intro>.mist{-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 45%);mask-image:linear-gradient(to bottom,#000 0%,transparent 45%)}
+.intro>.mist .a{opacity:.3}.intro>.mist .b{opacity:.2}
+
+/* quote: classical epigraph between the intro and the first feature */
+.quote{position:relative;padding-block:64px 72px}
+.quote>.in{position:relative;z-index:2}
+.quote>.mist .a{opacity:.3}.quote>.mist .b{opacity:.2}
+.quote figure{margin:0 auto;max-width:40em;display:grid;gap:22px;justify-items:center;text-align:center}
+.quote blockquote{margin:0;position:relative;padding-top:44px}
+.quote blockquote::before{content:"\201C";position:absolute;top:-18px;left:50%;transform:translateX(-50%);font:600 96px/1 var(--f-title);color:var(--clay)}
+.quote blockquote p{margin:0;font:500 italic clamp(28px,3.2vw,40px)/1.3 var(--f-title);text-wrap:balance}
+.quote figcaption{font-size:15px;color:var(--linen-mute);display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px}
+.quote figcaption cite{font-style:normal;color:var(--linen)}
+.quote figcaption a{color:var(--mist);text-underline-offset:4px;text-decoration-color:var(--clay)}
+
+/* five feature sections, alternating Sail linen and Limestone */
+.feature{position:relative;padding-block:96px}
+.feature>.in{position:relative;z-index:2}
+.feature>.mist,.quote>.mist{-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 38%,transparent 62%,#000 100%);mask-image:linear-gradient(to bottom,#000 0%,transparent 38%,transparent 62%,#000 100%)}
+.row{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center}
+.row.flip{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.row.flip .media{order:2}
+.row .media{min-width:0;display:grid;gap:10px}
+.row .txt{min-width:0}
+.row h2{font:600 clamp(30px,3.1vw,42px)/1.1 var(--f-title);margin:0 0 16px;text-wrap:balance}
+.row p{margin:0 0 12px;max-width:34em;color:var(--ink-2)}
+.band{background:var(--limestone)}
+.band .row p{color:#334a54}
+
+/* chapter starters: carved numeral and a line icon above each feature heading */
+.chap{display:flex;align-items:center;gap:14px;margin-bottom:18px;color:var(--adriatic)}
+.chap svg{width:40px;height:40px;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.chap svg .acc{stroke:var(--clay)}
+.chap span{font:600 22px/1 var(--f-title);letter-spacing:.18em;padding-left:14px;border-left:1px solid var(--rule-light)}
+.band .chap span{border-left-color:#c6b99f}
+
+/* coming-soon plates: dark tooled leather with a gilt double rule and a blind-tooled inner line */
+.tocome{position:relative;aspect-ratio:16/9;max-width:100%;display:grid;place-items:center;text-align:center;padding:40px 28px;border-radius:3px;isolation:isolate;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -.8 .5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012' numOctaves='4' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .36 0 0 0 0 .2 0 0 0 .75 -.34'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E"),radial-gradient(ellipse 80% 90% at 38% 32%,#5b3b25 0%,#3e2817 52%,#22150c 100%);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.55),inset 0 0 70px rgba(15,8,3,.6),0 14px 34px -16px rgba(34,21,12,.7)}
+.tocome::before{content:"";position:absolute;inset:14px;border:1px solid rgba(217,184,111,.6);outline:1px solid rgba(217,184,111,.32);outline-offset:-6px;pointer-events:none}
+.tocome::after{content:"";position:absolute;inset:30px;border:1px solid rgba(10,5,2,.45);box-shadow:0 1px 0 rgba(255,236,200,.07),inset 0 1px 0 rgba(255,236,200,.05);pointer-events:none}
+.tocome .plate{position:relative;z-index:1;display:grid;justify-items:center;gap:12px;max-width:24em}
+.tocome .orn{width:132px;height:14px;color:var(--light);opacity:.85}
+.tocome .orn:last-child{transform:scaleY(-1)}
+.tocome b{font:500 italic clamp(23px,2.4vw,31px)/1.15 var(--f-title);letter-spacing:.015em;text-wrap:balance;color:#e2c47e;
+  background:linear-gradient(180deg,#f0daa4 0%,#d9b86f 55%,#b8924a 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 0 rgba(8,4,1,.7))}
+.film .tocome b{font-size:clamp(26px,2.8vw,36px)}
+@media (max-width:520px){.tocome{padding:30px 22px}.tocome::before{inset:10px}.tocome::after{inset:22px}.tocome .orn{width:104px}}
+
+/* roadmap band */
+.next-sec{position:relative;padding-block:72px}
+.next-sec>.in{position:relative;z-index:2}
+.next{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px 40px}
+.next h2{font:600 clamp(28px,3.2vw,38px)/1.15 var(--f-title);margin:0 0 8px;color:var(--adriatic)}
+.next p{margin:0;color:#334a54}
+.next .btn{border-color:var(--adriatic);color:var(--adriatic);background:transparent}
+.next .btn:hover{background:var(--adriatic);color:var(--linen)}
+
+/* voyage line: a sailing route down the gap between media and text, with a ship at the reader's place */
+.voyage{position:absolute;top:0;left:0;width:100%;z-index:1;pointer-events:none;overflow:visible}
+.voyage .ahead{fill:none;stroke:var(--adriatic);stroke-opacity:.35;stroke-width:1.2;stroke-dasharray:5 7}
+.voyage .done{fill:none;stroke:var(--clay);stroke-opacity:.8;stroke-width:1.4}
+.voyage .wp{fill:var(--linen);stroke:var(--clay);stroke-width:1.2}
+.voyage .ship path{fill:var(--adriatic)}.voyage .ship .sail{fill:var(--linen);stroke:var(--adriatic);stroke-width:1}
+
+@media (max-width:780px){
+  .hero{min-height:600px}
+  .hero>.in{padding-block:110px 44px}
+  .hero p{font-size:17px}
+  .intro{padding-block:24px 72px}
+  .intro>.in,.row,.row.flip{grid-template-columns:1fr;gap:28px}
+  .row.flip .media{order:0}
+  .feature{padding-block:60px}
+  .voyage{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-chart .ship{animation:none;offset-distance:55%}
+  .chart-mist i{animation:none}
+}
+.facts{text-shadow:0 0 2px var(--adriatic),0 0 6px var(--adriatic),0 0 14px var(--adriatic),0 0 24px rgba(23,62,74,.85)}
+/* the hero's small print sits where the mist is thickest: brighter tints, thinner mist */
+.hero>.mist{opacity:.7}
+.hero .facts{color:var(--linen)}
+.hero .facts .tags{color:#bcd0cb}
+.hero .signup-msg{color:var(--linen)}
+.hero .signup-note{color:var(--linen)}
