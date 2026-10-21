@@ -73,8 +73,9 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .signup-msg:empty{display:none}
 .signup-msg.ok{color:var(--linen);font-size:16px}
 .signup-msg.err{color:#f0c9b9}
-.signup-note{display:block;margin-top:8px;color:var(--quiet);font-size:13px;line-height:1.5;max-width:36em}
-.signup-note a{color:var(--linen);text-underline-offset:3px;text-decoration-color:var(--light)}
+/* the asterisk after the newsletter line leads to the privacy note */
+.star{display:inline-block;margin-left:2px;padding:0 3px;color:var(--light);font-weight:600;text-decoration:none;position:relative;top:-.2em;font-size:1.25em;line-height:1}
+.star:hover{color:var(--linen)}
 .signup.done{display:none}
 /* the EmailOctopus form that does the sending; kept off screen, see newsletter.js */
 .eo-bridge{position:absolute;left:-10000px;top:auto;width:400px;height:auto;overflow:hidden}
@@ -163,4 +164,4 @@ input,textarea{cursor:text}
 
 /* small text over the drifting mist: a soft halo of sea keeps it at WCAG AA
    wherever a bright bank passes behind it */
-.halo,.dark .signup-msg,.dark .signup-note,.legal,.foot p{text-shadow:0 0 2px var(--adriatic),0 0 6px var(--adriatic),0 0 14px var(--adriatic),0 0 24px rgba(23,62,74,.85)}
+.halo,.dark .signup-msg,.legal,.foot p{text-shadow:0 0 2px var(--adriatic),0 0 6px var(--adriatic),0 0 14px var(--adriatic),0 0 24px rgba(23,62,74,.85)}
