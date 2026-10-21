@@ -119,24 +119,27 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .marks .astro{opacity:.16}
 .marks .astro .fine{stroke-width:.75}
 .marks .astro .bold{stroke-width:1.25}
-.marks .rete{animation:astro-turn 480s linear infinite}
+.marks .rete{animation:astro-turn 480s steps(7200) infinite}  /* 15 steps a second: no repaint every frame */
 @keyframes astro-turn{to{transform:rotate(360deg)}}
 .marks .geo{fill:none;stroke:var(--mist);stroke-width:1;vector-effect:non-scaling-stroke;opacity:.28}
 .marks .geo.dash{stroke-dasharray:3 6}
 .marks text{font:500 italic 17px var(--f-title);fill:var(--mist);opacity:.5}
 
 /* sea mist: tileable fractal-noise banks that drift sideways, low over the water.
-   Each bank is wider than the screen by one tile and slides one tile, so the loop is seamless. */
+   Each bank is wider than the screen by one tile and slides one tile, so the loop is seamless.
+   The images in img/mist/ carry each section's fade (no CSS masks: on phones those forced an
+   offscreen pass per bank on every frame). The drift moves in 15 steps a second rather than
+   every frame, too slow to see but far less redrawing. */
 .mist{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
-.mist i{position:absolute;top:0;bottom:0;left:0;width:calc(100% + 1200px);background-repeat:repeat;will-change:transform}
-.mist .a{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0025 0.009' numOctaves='4' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .95 0 0 0 0 .92 0 0 0 0 .87 1.9 0 0 0 -0.78'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");opacity:.5;animation:mist-drift 140s linear infinite}
-.mist .b{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004 0.014' numOctaves='4' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .95 0 0 0 0 .92 0 0 0 0 .87 1.7 0 0 0 -0.72'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");opacity:.35;animation:mist-drift 90s linear infinite reverse}
+.mist i{position:absolute;top:0;bottom:0;left:0;width:calc(100% + 1200px);background-repeat:repeat-x;background-size:1200px 100%;will-change:transform}
+.mist .a{opacity:.5;animation:mist-drift 140s steps(2100) infinite}
+.mist .b{opacity:.35;animation:mist-drift 90s steps(1350) infinite reverse}
 @keyframes mist-drift{to{transform:translateX(-1200px)}}
-.foot>.mist{-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 55%);mask-image:linear-gradient(to bottom,#000 0%,transparent 55%)}
+.foot>.mist .a{background-image:url("../img/mist/light-a-foot.svg")}.foot>.mist .b{background-image:url("../img/mist/light-b-foot.svg")}
 .foot>.mist .a{opacity:.35}.foot>.mist .b{opacity:.22}
-/* haze on the light grounds: the same drifting banks in a cool blue-gray */
-.mist.haze .a{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0025 0.009' numOctaves='4' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.27 0 0 0 0 0.36 0 0 0 0 0.4 1.9 0 0 0 -0.8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");opacity:.36}
-.mist.haze .b{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004 0.014' numOctaves='4' seed='13' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.27 0 0 0 0 0.36 0 0 0 0 0.4 1.7 0 0 0 -0.74'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");opacity:.26}
+/* haze on the light grounds: the same drifting banks in a cool blue-gray (haze-*.svg) */
+.mist.haze .a{opacity:.36}
+.mist.haze .b{opacity:.26}
 
 /* cursor: a compass needle (tip is the hotspot); over links and buttons it becomes a small wind rose */
 html{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M3 3L15.5 8.5L8.5 15.5Z' fill='none' stroke='%23F2EBDD' stroke-opacity='.7' stroke-width='3' stroke-linejoin='round'/%3E%3Cpath d='M15.5 8.5L23 23L8.5 15.5Z' fill='none' stroke='%23F2EBDD' stroke-opacity='.7' stroke-width='3' stroke-linejoin='round'/%3E%3Cpath d='M3 3L15.5 8.5L8.5 15.5Z' fill='%23B77962' stroke='%23173E4A' stroke-width='1.2' stroke-linejoin='round'/%3E%3Cpath d='M15.5 8.5L23 23L8.5 15.5Z' fill='%23F2EBDD' stroke='%23173E4A' stroke-width='1.2' stroke-linejoin='round'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%23D9B86F' stroke='%23173E4A' stroke-width='1'/%3E%3C/svg%3E") 3 3,auto}

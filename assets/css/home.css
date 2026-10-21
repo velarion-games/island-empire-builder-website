@@ -24,7 +24,7 @@
 .facts em{font-style:italic;margin-left:12px}
 .facts em::before{content:"— ";color:var(--light)}
 .facts .os{width:15px;height:15px;flex:0 0 auto}
-.hero>.mist{-webkit-mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%);mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%)}
+.hero>.mist .a{background-image:url("../img/mist/light-a-low.svg")}.hero>.mist .b{background-image:url("../img/mist/light-b-low.svg")}
 
 /* hero chart: the archipelago drawn portolan-style in the hero's open right half */
 .hero-chart{position:absolute;right:max(24px,env(safe-area-inset-right,0px));bottom:64px;width:min(40%,470px);z-index:0;pointer-events:none;overflow:visible}
@@ -56,7 +56,7 @@
 .intro>.in{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center}
 .lede{font:400 clamp(22px,1.9vw,24px)/1.55 var(--f-read);font-optical-sizing:auto;margin:0;text-wrap:pretty}
 .film{position:relative;margin:0}
-.intro>.mist{-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 45%);mask-image:linear-gradient(to bottom,#000 0%,transparent 45%)}
+.intro>.mist .a{background-image:url("../img/mist/haze-a-top.svg")}.intro>.mist .b{background-image:url("../img/mist/haze-b-top.svg")}
 .intro>.mist .a{opacity:.3}.intro>.mist .b{opacity:.2}
 
 /* quote: classical epigraph between the intro and the first feature */
@@ -74,7 +74,8 @@
 /* five feature sections, alternating Sail linen and Limestone */
 .feature{position:relative;padding-block:96px}
 .feature>.in{position:relative;z-index:2}
-.feature>.mist,.quote>.mist{-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 38%,transparent 62%,#000 100%);mask-image:linear-gradient(to bottom,#000 0%,transparent 38%,transparent 62%,#000 100%)}
+.feature>.mist .a{background-image:url("../img/mist/haze-a-edges.svg")}.feature>.mist .b{background-image:url("../img/mist/haze-b-edges.svg")}
+.quote>.mist .a{background-image:url("../img/mist/light-a-edges.svg")}.quote>.mist .b{background-image:url("../img/mist/light-b-edges.svg")}
 .row{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center}
 .row.flip{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
 .row.flip .media{order:2}
@@ -137,8 +138,9 @@
   .chart-mist i{animation:none}
 }
 .facts{text-shadow:0 0 2px var(--adriatic),0 0 6px var(--adriatic),0 0 14px var(--adriatic),0 0 24px rgba(23,62,74,.85)}
-/* the hero's small print sits where the mist is thickest: brighter tints, thinner mist */
-.hero>.mist{opacity:.7}
+/* the hero's small print sits where the mist is thickest: brighter tints, thinner mist
+   (.7 of the usual, set on each layer so the bank needs no offscreen pass) */
+.hero>.mist .a{opacity:.35}.hero>.mist .b{opacity:.245}
 .hero .facts{color:var(--linen)}
 .hero .facts .tags{color:#bcd0cb}
 .hero .signup-msg{color:var(--linen)}
