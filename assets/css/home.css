@@ -142,3 +142,5 @@
 .hero .facts{color:var(--linen)}
 .hero .facts .tags{color:#bcd0cb}
 .hero .signup-msg{color:var(--linen)}
+/* where the Steam wishlist button will go: a quiet, non-interactive placeholder until the store page exists */
+.hero .steam-soon{display:inline-flex;align-items:center;margin:26px 0 0;padding:11px 20px;border:1px dashed rgba(242,235,221,.5);border-radius:2px;font:500 15px/1.2 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--linen)}
