@@ -1,10 +1,12 @@
 // Diagnostics for finding what makes the page slow on a given phone. Off unless asked for in the URL:
 //   ?fps                      a frame-rate counter in the corner (tap it to reset)
 //   ?off=mist,lines,plates,glow   turn decorative layers off (or ?off=all)
+//   ?mist=img                 on phones, draw the mist from pre-rendered images instead of the SVG noise filter
 // mist = sea mist and haze; lines = rhumb lines, astrolabe and voyage line;
 // plates = the leather texture and shadows on the video plates; glow = the text halos.
 (()=>{
   const q=new URLSearchParams(location.search);
+  if(q.get("mist")==="img")document.documentElement.classList.add("mist-img");
   if(!q.has("fps")&&!q.has("off"))return;
   const all=["mist","lines","plates","glow"];
   let off=(q.get("off")||"").split(",").map(s=>s.trim()).filter(Boolean);
@@ -28,7 +30,7 @@
     const dt=now-last;last=now;
     times.push(now);while(times.length&&now-times[0]>1000)times.shift();
     if(dt<1000){worst=Math.max(worst,dt);if(dt>50)slow++;}
-    box.textContent=`${times.length} fps · worst ${Math.round(worst)} ms · slow ${slow}\noff: ${off.length?off.join(", "):"none"}`;
+    box.textContent=`${times.length} fps · worst ${Math.round(worst)} ms · slow ${slow}\noff: ${off.length?off.join(", "):"none"}${q.get("mist")==="img"?" · mist: img":""}`;
     requestAnimationFrame(tick);
   };
   const start=()=>{document.body.append(box);requestAnimationFrame(tick);};

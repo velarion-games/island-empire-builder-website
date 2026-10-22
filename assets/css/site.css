@@ -158,6 +158,12 @@ input,textarea{cursor:text}
    still banks are drawn once. */
 @media (max-width:780px),(pointer:coarse){
   .mist .a,.mist .b,.hero .chart-mist i{animation:none;will-change:auto}
+  /* on trial behind ?mist=img: the same tiles pre-rendered to images (img/mist/, rendered from
+     the SVGs above), so phones don't compute the noise filter as each section scrolls in */
+  .mist-img .mist .a{background-image:url("../img/mist/mist-a.webp");background-size:1200px 600px}
+  .mist-img .mist .b{background-image:url("../img/mist/mist-b.webp");background-size:1200px 600px}
+  .mist-img .mist.haze .a{background-image:url("../img/mist/haze-a.webp")}
+  .mist-img .mist.haze .b{background-image:url("../img/mist/haze-b.webp")}
 }
 
 /* reduced motion: no drift, no drawing, no turning, no smooth scroll */
