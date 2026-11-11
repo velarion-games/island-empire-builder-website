@@ -13,8 +13,9 @@
 .store{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(0,1fr);grid-template-areas:"main side";gap:36px;align-items:start;padding-bottom:0!important}
 .side{grid-area:side;display:grid;gap:22px}.main-col{grid-area:main;display:grid;gap:30px;min-width:0}
 /* sign-up under the carousel, one column */
-.cta{display:grid;justify-items:start;max-width:520px}
-.cta .signup{width:100%}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.cta .signup{flex:1 1 380px;max-width:520px}
+.hero .cta .steam-soon{margin:0;align-self:stretch;min-height:48px;padding-block:0}
 /* the quote closes the top section */
 .hero>.in.quote{padding-block:88px 84px}
 .hero>.mist{-webkit-mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%);mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%)}
