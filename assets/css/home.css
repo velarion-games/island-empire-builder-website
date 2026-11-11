@@ -3,8 +3,9 @@
    Sail linen / Limestone, the features list on Deep Adriatic, the planned-features band, the
    roadmap band, then the Deep Adriatic footer with the newsletter and socials. Shared chrome lives in site.css. */
 
-.nav .wordmark{opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .3s,transform .3s,visibility .3s}
-.nav.solid .wordmark{opacity:1;visibility:visible;transform:none}
+/* The star stays put at top left; the title slides in beside it once the header turns solid */
+.nav .wordmark .wm{opacity:0;visibility:hidden;transform:translateX(-6px);transition:opacity .3s,transform .3s,visibility .3s}
+.nav.solid .wordmark .wm{opacity:1;visibility:visible;transform:none}
 
 /* hero = Steam's top area: carousel left; header capsule, short description and facts right.
    On phones: capsule, carousel, then the text, like Steam's mobile page. */
