@@ -104,7 +104,7 @@
 .row .txt{min-width:0}
 .row h2{font:600 clamp(30px,3.1vw,42px)/1.1 var(--f-title);margin:0 0 16px;text-wrap:balance}
 .row p{margin:0 0 12px;max-width:34em;color:var(--ink-2)}
-.band{background:var(--limestone)}
+.band{background:var(--band,var(--limestone))}
 .band .row p{color:#334a54}
 
 /* chapter starters: carved numeral and a line icon above each feature heading */
