@@ -9,7 +9,7 @@
 
 :root{
   --adriatic:#173E4A;   /* sea, ink on light */
-  --ground:#061327;     /* dark grounds: near-black deep-sea blue (trial 2026-11-11) */
+  --ground:#0f1a24;     /* dark grounds: near-black deep-sea blue (trial 2026-11-11) */
   --limestone:#D8CDB7;  /* warm structural neutral */
   --linen:#F2EBDD;      /* light surfaces, lettering over the sea */
   --olive:#69765C;      /* quiet life: rules and marks */
@@ -17,7 +17,7 @@
   --clay:#B77962;       /* warmth */
   --light:#D9B86F;      /* first light, used sparingly */
   /* derived */
-  --adriatic-deep:#0b1d36; --linen-mute:#c9c4b6; --ink-2:#3d5560; --rule-light:#cfc4ad; --rule-dark:rgba(242,235,221,.16);
+  --adriatic-deep:#17252f; --linen-mute:#c9c4b6; --ink-2:#3d5560; --rule-light:#cfc4ad; --rule-dark:rgba(242,235,221,.16);
   /* text tints that keep WCAG AA (4.5:1) for small text */
   --olive-ink:#4f5a45;  /* olive text on linen and limestone */
   --clay-ink:#7a4433;   /* clay text on linen and limestone */
@@ -183,4 +183,4 @@ input,textarea{cursor:text}
 
 /* small text over the drifting mist: a soft halo of sea keeps it at WCAG AA
    wherever a bright bank passes behind it */
-.halo,.dark .signup-msg,.legal,.foot p{text-shadow:0 0 2px var(--ground),0 0 6px var(--ground),0 0 14px var(--ground),0 0 24px rgba(6,19,39,.85)}
+.halo,.dark .signup-msg,.legal,.foot p{text-shadow:0 0 2px var(--ground),0 0 6px var(--ground),0 0 14px var(--ground),0 0 24px rgba(15,26,36,.85)}
