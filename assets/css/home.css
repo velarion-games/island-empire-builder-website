@@ -22,7 +22,7 @@
 .hero>.mist{-webkit-mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%);mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%)}
 
 /* header capsule (Steam 460x215): placeholder art for now; the tagline sits under it */
-.capsule{position:relative;aspect-ratio:460/215;overflow:hidden;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(217,184,111,.45),0 14px 34px -18px rgba(0,0,0,.6);background:var(--adriatic-deep)}
+.capsule{position:relative;aspect-ratio:924/348;overflow:hidden;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(217,184,111,.45),0 14px 34px -18px rgba(0,0,0,.6);background:var(--adriatic-deep)}
 .capsule h1{margin:0;height:100%}
 .capsule img{width:100%;height:100%;object-fit:cover}
 .motto{display:flex;align-items:center;gap:12px;margin-top:-8px}
