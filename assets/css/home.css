@@ -201,7 +201,7 @@
 }
 /* the Steam box sits at the foot of the card, level with the sign-up */
 .side{align-self:stretch;align-content:start}
-.side .steam{margin-top:auto;padding-top:8px}
+.side .steam{grid-area:auto;margin-top:auto;padding-top:8px}
 .side{grid-template-rows:auto auto auto 1fr}
 .hero .side .steam-soon{color:var(--adriatic);border-color:rgba(23,62,74,.55)}
 @media (max-width:1000px){.hero .side .steam-soon{color:var(--linen);border-color:rgba(242,235,221,.5)}}
