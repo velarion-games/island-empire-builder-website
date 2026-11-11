@@ -8,7 +8,8 @@
 @font-face{font-family:"Source Serif 4";font-style:normal;font-weight:400;font-display:swap;src:url("../fonts/source-serif-4.woff2") format("woff2")}
 
 :root{
-  --adriatic:#173E4A;   /* sea, title ground, ink on light */
+  --adriatic:#173E4A;   /* sea, ink on light */
+  --ground:#061327;     /* dark grounds: near-black deep-sea blue (trial 2026-11-11) */
   --limestone:#D8CDB7;  /* warm structural neutral */
   --linen:#F2EBDD;      /* light surfaces, lettering over the sea */
   --olive:#69765C;      /* quiet life: rules and marks */
@@ -16,7 +17,7 @@
   --clay:#B77962;       /* warmth */
   --light:#D9B86F;      /* first light, used sparingly */
   /* derived */
-  --adriatic-deep:#11313b; --linen-mute:#c9c4b6; --ink-2:#3d5560; --rule-light:#cfc4ad; --rule-dark:rgba(242,235,221,.16);
+  --adriatic-deep:#0b1d36; --linen-mute:#c9c4b6; --ink-2:#3d5560; --rule-light:#cfc4ad; --rule-dark:rgba(242,235,221,.16);
   /* text tints that keep WCAG AA (4.5:1) for small text */
   --olive-ink:#4f5a45;  /* olive text on linen and limestone */
   --clay-ink:#7a4433;   /* clay text on linen and limestone */
@@ -29,10 +30,10 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
 body{margin:0;background:var(--linen);color:var(--adriatic);font-family:var(--f-body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:11;background:var(--adriatic)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:11;background:var(--ground)}
 img,video{max-width:100%;display:block}
 .in{max-width:1180px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
-.dark{background:var(--adriatic);color:var(--linen)}
+.dark{background:var(--ground);color:var(--linen)}
 .caps{text-transform:uppercase}
 .caps i{font-style:normal;font-size:.76em}
 a{color:inherit}
@@ -46,7 +47,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 
 /* header */
 .nav{position:fixed;inset:0 0 auto 0;z-index:10;padding-top:env(safe-area-inset-top,0px);color:var(--linen);border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
-.nav.solid{background:var(--adriatic);border-bottom-color:var(--rule-dark)}
+.nav.solid{background:var(--ground);border-bottom-color:var(--rule-dark)}
 .nav .in{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:16px}
 .wordmark{font:600 24px/1 var(--f-title);letter-spacing:.04em;text-decoration:none;white-space:nowrap}
 .nav nav{display:flex;gap:26px;font-size:15px;font-weight:500;letter-spacing:.04em}
@@ -182,4 +183,4 @@ input,textarea{cursor:text}
 
 /* small text over the drifting mist: a soft halo of sea keeps it at WCAG AA
    wherever a bright bank passes behind it */
-.halo,.dark .signup-msg,.legal,.foot p{text-shadow:0 0 2px var(--adriatic),0 0 6px var(--adriatic),0 0 14px var(--adriatic),0 0 24px rgba(23,62,74,.85)}
+.halo,.dark .signup-msg,.legal,.foot p{text-shadow:0 0 2px var(--ground),0 0 6px var(--ground),0 0 14px var(--ground),0 0 24px rgba(6,19,39,.85)}

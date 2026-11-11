@@ -36,7 +36,7 @@
 .slide[hidden]{display:none}
 .slide figcaption{min-height:1.3em;display:flex;align-items:baseline;gap:12px;margin-top:10px;font:500 italic 19px/1.3 var(--f-title);color:var(--linen)}
 .slide figcaption span{font:600 14px/1 var(--f-title);font-style:normal;letter-spacing:.18em;color:var(--light)}
-.nudge{position:absolute;top:calc(50% - 22px);transform:translateY(-50%);width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(217,184,111,.5);border-radius:50%;background:rgba(17,49,59,.7);color:var(--linen);padding:0;z-index:2}
+.nudge{position:absolute;top:calc(50% - 22px);transform:translateY(-50%);width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(217,184,111,.5);border-radius:50%;background:rgba(6,19,39,.7);color:var(--linen);padding:0;z-index:2}
 .nudge svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .nudge:hover{background:var(--adriatic-deep);border-color:var(--light)}
 .nudge.prev{left:12px}.nudge.next{right:12px}
@@ -151,13 +151,13 @@
   .feature{padding-block:60px}
   .voyage{display:none}
 }
-.facts{text-shadow:0 0 2px var(--adriatic),0 0 6px var(--adriatic),0 0 14px var(--adriatic),0 0 24px rgba(23,62,74,.85)}
+.facts{text-shadow:0 0 2px var(--ground),0 0 6px var(--ground),0 0 14px var(--ground),0 0 24px rgba(6,19,39,.85)}
 /* the hero's small print sits where the mist is thickest: brighter tints, thinner mist */
 .hero>.mist{opacity:.7}
 .hero .facts{color:var(--linen)}
 .hero .facts .tags{color:#bcd0cb}
 .hero .signup-msg{color:var(--linen)}
-.hero .short{text-shadow:0 0 2px var(--adriatic),0 0 8px var(--adriatic)}
+.hero .short{text-shadow:0 0 2px var(--ground),0 0 8px var(--ground)}
 /* where the Steam wishlist button will go: a quiet, non-interactive placeholder until the store page exists */
 .hero .steam-soon{display:inline-flex;align-items:center;margin:22px 0 0;padding:11px 20px;border:1px dashed rgba(242,235,221,.5);border-radius:2px;font:500 15px/1.2 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--linen)}
 

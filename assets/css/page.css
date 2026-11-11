@@ -30,5 +30,5 @@ header.dark{padding-top:calc(57px + env(safe-area-inset-top,0px))}
 .prose ul{margin:0 0 14px;padding-left:22px}
 .prose a{text-underline-offset:3px;text-decoration-color:var(--clay)}
 .prose .updated{font-size:15px;margin-top:40px}
-.head p,.legend{text-shadow:0 0 2px var(--adriatic),0 0 6px var(--adriatic),0 0 14px var(--adriatic),0 0 24px rgba(23,62,74,.85)}
+.head p,.legend{text-shadow:0 0 2px var(--ground),0 0 6px var(--ground),0 0 14px var(--ground),0 0 24px rgba(6,19,39,.85)}
 header>.mist{opacity:.8}
