@@ -10,12 +10,13 @@
    On phones: capsule, carousel, then the text, like Steam's mobile page. */
 .hero{position:relative}
 .hero>.in{width:100%;padding-block:112px 64px;position:relative;z-index:2}
-.store{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(0,1fr);grid-template-areas:"main side";gap:36px;align-items:start;padding-bottom:0!important}
+.store{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(0,1fr);grid-template-areas:"main side" "cta steam";gap:36px;align-items:start;padding-bottom:0!important}
 .side{grid-area:side;display:grid;gap:22px}.main-col{grid-area:main;display:grid;gap:30px;min-width:0}
 /* sign-up under the carousel, one column */
-.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
-.cta .signup{flex:1 1 380px;max-width:520px}
-.hero .cta .steam-soon{margin:0;align-self:stretch;min-height:48px;padding-block:0}
+.cta{grid-area:cta;display:grid;justify-items:center;text-align:center}
+.cta .signup{width:100%;max-width:520px;justify-content:center}
+.steam{grid-area:steam;display:flex;justify-content:center}
+.hero .steam .steam-soon{margin:0;min-height:56px}
 /* the quote closes the top section */
 .hero>.in.quote{padding-block:88px 84px}
 .hero>.mist{-webkit-mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%);mask-image:linear-gradient(to top,#000 0%,#000 22%,transparent 80%)}
@@ -65,7 +66,8 @@
 @media (max-width:1000px){
   .store{grid-template-columns:1fr;grid-template-areas:none;gap:24px}
   .side,.main-col{display:contents}
-  .capsule{order:1}.gallery{order:2}.summary{order:3}.cta{order:4}
+  .capsule{order:1}.gallery{order:2}.summary{order:3}.cta{order:4}.steam{order:5}
+  .cta,.steam{grid-area:auto}
   .hero>.in.quote{padding-block:64px 64px}
   .capsule{max-width:560px}
   .capsule{order:1}.motto{order:1;margin-top:-12px}
