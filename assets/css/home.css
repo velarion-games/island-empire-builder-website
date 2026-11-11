@@ -10,7 +10,7 @@
    On phones: capsule, carousel, then the text, like Steam's mobile page. */
 .hero{position:relative}
 .hero>.in{width:100%;padding-block:112px 64px;position:relative;z-index:2}
-.store{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(0,1fr);grid-template-areas:"main side" "cta steam";gap:36px;align-items:start;padding-bottom:0!important}
+.store{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(0,1fr);grid-template-areas:"main side" "cta side";gap:36px;align-items:start;padding-bottom:0!important}
 .side{grid-area:side;display:grid;gap:22px}.main-col{grid-area:main;display:grid;gap:30px;min-width:0}
 /* sign-up under the carousel, one column */
 .cta{grid-area:cta;display:grid;justify-items:center;text-align:center}
@@ -199,3 +199,9 @@
   .summary{order:3;background:var(--linen);padding:18px;border-radius:3px}
   .side .motto em{color:var(--linen)}
 }
+/* the Steam box sits at the foot of the card, level with the sign-up */
+.side{align-self:stretch;align-content:start}
+.side .steam{margin-top:auto;padding-top:8px}
+.side{grid-template-rows:auto auto auto 1fr}
+.hero .side .steam-soon{color:var(--adriatic);border-color:rgba(23,62,74,.55)}
+@media (max-width:1000px){.hero .side .steam-soon{color:var(--linen);border-color:rgba(242,235,221,.5)}}
