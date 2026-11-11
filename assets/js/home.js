@@ -1,4 +1,4 @@
-// Landing page: the voyage line.
+// Landing page: the voyage line and the screenshot carousel.
 
 // voyage line: from the intro down through the gap beside each feature to the footer,
 // solid where the reader has already sailed, a small ship at the reader's place
@@ -41,4 +41,20 @@
   addEventListener("scroll",()=>requestAnimationFrame(place),{passive:true});
   let t;new ResizeObserver(()=>{clearTimeout(t);t=setTimeout(build,150)}).observe(document.body);
   document.fonts&&document.fonts.ready.then(build);
+})();
+
+// screenshot carousel: thumbnails and arrows switch the big slide (Steam-style, no autoplay)
+(()=>{
+  const g=document.querySelector(".gallery");if(!g)return;
+  const slides=[...g.querySelectorAll(".slide")],thumbs=[...g.querySelectorAll(".thumb")];
+  let cur=0;
+  const show=i=>{
+    cur=(i+slides.length)%slides.length;
+    slides.forEach((s,k)=>s.hidden=k!==cur);
+    thumbs.forEach((t,k)=>k===cur?t.setAttribute("aria-current","true"):t.removeAttribute("aria-current"));
+  };
+  thumbs.forEach((t,k)=>t.addEventListener("click",()=>show(k)));
+  g.querySelector(".prev").addEventListener("click",()=>show(cur-1));
+  g.querySelector(".next").addEventListener("click",()=>show(cur+1));
+  g.addEventListener("keydown",e=>{if(e.key==="ArrowLeft")show(cur-1);else if(e.key==="ArrowRight")show(cur+1);});
 })();
