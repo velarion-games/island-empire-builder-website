@@ -64,7 +64,7 @@
 .facts .os{width:15px;height:15px;flex:0 0 auto}
 .facts .platforms span:not(:last-of-type)::after{margin:0 8px 0 1px}
 
-@media (max-width:1000px) and (orientation:portrait),(max-width:700px){
+@media (max-width:1000px){
   .store{grid-template-columns:1fr;grid-template-areas:none;gap:24px}
   /* Steam's phone order: the card (capsule, description, facts) first, then the carousel, then the sign-up */
   .side{order:1;grid-area:auto}.main-col{order:2;grid-area:auto}.cta{order:3;grid-area:auto}
@@ -183,7 +183,7 @@
 .side .facts li>span:not(:last-of-type)::after,.side .facts em::before{color:var(--clay)}
 .side .summary .facts{margin-bottom:0}
 .side .motto{margin-top:-6px}
-@media (max-width:1000px) and (orientation:portrait),(max-width:700px){
+@media (max-width:1000px){
   .side{grid-template-rows:none}
 }
 /* the Steam box sits at the foot of the card, level with the sign-up */
