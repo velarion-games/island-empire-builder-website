@@ -133,7 +133,9 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 
 /* sea mist: tileable fractal-noise banks that drift sideways, low over the water.
    Each bank is wider than the screen by one tile and slides one tile, so the loop is seamless. */
-.mist{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+/* --fog: one knob for how strong the mist is everywhere (1 = original) */
+:root{--fog:.5}
+.mist{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;opacity:var(--fog)}
 .mist i{position:absolute;top:0;bottom:0;left:0;width:calc(100% + 1200px);background-repeat:repeat;will-change:transform}
 .mist .a{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0025 0.009' numOctaves='4' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .95 0 0 0 0 .92 0 0 0 0 .87 1.9 0 0 0 -0.78'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");opacity:.5;animation:mist-drift 140s linear infinite}
 .mist .b{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004 0.014' numOctaves='4' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .95 0 0 0 0 .92 0 0 0 0 .87 1.7 0 0 0 -0.72'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");opacity:.35;animation:mist-drift 90s linear infinite reverse}

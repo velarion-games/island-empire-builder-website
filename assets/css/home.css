@@ -153,7 +153,7 @@
 }
 .facts{text-shadow:0 0 2px var(--ground),0 0 6px var(--ground),0 0 14px var(--ground),0 0 24px rgba(15,26,36,.85)}
 /* the hero's small print sits where the mist is thickest: brighter tints, thinner mist */
-.hero>.mist{opacity:.7}
+.hero>.mist{opacity:calc(.7*var(--fog))}
 .hero .facts{color:var(--linen)}
 .hero .facts .tags{color:#bcd0cb}
 .hero .signup-msg{color:var(--linen)}
