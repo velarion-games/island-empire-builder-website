@@ -54,7 +54,7 @@
     thumbs.forEach((t,k)=>k===cur?t.setAttribute("aria-current","true"):t.removeAttribute("aria-current"));
   };
   thumbs.forEach((t,k)=>t.addEventListener("click",()=>show(k)));
-  g.querySelector(".prev").addEventListener("click",()=>show(cur-1));
-  g.querySelector(".next").addEventListener("click",()=>show(cur+1));
+  g.querySelector(".nudge.back").addEventListener("click",()=>show(cur-1));
+  g.querySelector(".nudge.fwd").addEventListener("click",()=>show(cur+1));
   g.addEventListener("keydown",e=>{if(e.key==="ArrowLeft")show(cur-1);else if(e.key==="ArrowRight")show(cur+1);});
 })();
