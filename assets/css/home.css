@@ -181,3 +181,21 @@
 .card p{margin:0 0 12px;font-size:17px;color:var(--ink-2)}
 .card .chap{margin-bottom:14px}
 @media (max-width:900px){.cards{grid-template-columns:1fr;gap:32px}.horizon{padding-block:60px}}
+
+/* right column as a Sail linen card (trial): dark ink on light, no halos */
+.side{background:var(--linen);color:var(--adriatic);padding:16px 16px 20px;border-radius:3px;box-shadow:0 18px 40px -22px rgba(0,0,0,.7)}
+.side .motto em{color:var(--adriatic)}
+.side .motto::before{background:var(--clay)}
+.hero .side .short,.hero .side .facts{text-shadow:none}
+.hero .side .facts{color:var(--ink-2)}
+.hero .side .facts .tags{color:var(--olive-ink)}
+.side .facts .platforms span{color:var(--adriatic)}
+.side .facts li>span:not(:last-of-type)::after,.side .facts em::before{color:var(--clay)}
+.side .summary .facts{margin-bottom:0}
+.side .motto{margin-top:-6px}
+@media (max-width:1000px){
+  .side{background:none;box-shadow:none;padding:0}
+  .capsule,.motto,.summary{order:1}
+  .summary{order:3;background:var(--linen);padding:18px;border-radius:3px}
+  .side .motto em{color:var(--linen)}
+}
