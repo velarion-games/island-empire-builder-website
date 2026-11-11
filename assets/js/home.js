@@ -59,9 +59,9 @@
   g.addEventListener("keydown",e=>{if(e.key==="ArrowLeft")show(cur-1);else if(e.key==="ArrowRight")show(cur+1);});
 })();
 
-// band colour trial (2026-11-11): ?band=sky|mist|cloud|slate|sand swaps the Limestone bands for a capsule-inspired tint
+// band colour trial (2026-11-11): ?band=grey|light|dark|limestone|sky|mist|cloud|slate|sand swaps the band colour for a capsule-inspired tint
 (()=>{
-  const opts={limestone:"#D8CDB7",sky:"#D9E3EA",mist:"#D5DEDB",cloud:"#EEE5D3",slate:"#C8D1D8",sand:"#E6D9B8"};
+  const opts={grey:"#B4BAC0",light:"#C3C8CC",dark:"#A6ADB3",limestone:"#D8CDB7",sky:"#D9E3EA",mist:"#D5DEDB",cloud:"#EEE5D3",slate:"#C8D1D8",sand:"#E6D9B8"};
   const k=new URLSearchParams(location.search).get("band");
   if(k&&opts[k])document.documentElement.style.setProperty("--band",opts[k]);
 })();
