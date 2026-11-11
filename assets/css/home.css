@@ -66,12 +66,10 @@
 
 @media (max-width:1000px){
   .store{grid-template-columns:1fr;grid-template-areas:none;gap:24px}
-  .side,.main-col{display:contents}
-  .capsule{order:1}.gallery{order:2}.summary{order:3}.cta{order:4}.steam{order:5}
-  .cta,.steam{grid-area:auto}
+  /* Steam's phone order: the card (capsule, description, facts) first, then the carousel, then the sign-up */
+  .side{order:1;grid-area:auto}.main-col{order:2;grid-area:auto}.cta{order:3;grid-area:auto}
   .hero>.in.quote{padding-block:64px 64px}
   .capsule{max-width:560px}
-  .capsule{order:1}.motto{order:1;margin-top:-12px}
 }
 
 /* about this game: the extended description over the first loop section */
@@ -186,17 +184,13 @@
 .side .summary .facts{margin-bottom:0}
 .side .motto{margin-top:-6px}
 @media (max-width:1000px){
-  .side{background:none;box-shadow:none;padding:0}
-  .capsule,.motto,.summary{order:1}
-  .summary{order:3;background:var(--linen);padding:18px;border-radius:3px}
-  .side .motto em{color:var(--linen)}
+  .side{grid-template-rows:none}
 }
 /* the Steam box sits at the foot of the card, level with the sign-up */
 .side{align-self:stretch;align-content:start}
 .side .steam{grid-area:auto;margin-top:auto;padding-top:8px}
 .side{grid-template-rows:auto auto auto 1fr}
 .hero .side .steam-soon{color:var(--adriatic);border-color:rgba(23,62,74,.55)}
-@media (max-width:1000px){.hero .side .steam-soon{color:var(--linen);border-color:rgba(242,235,221,.5)}}
 
 /* shared haze for About + I–IV: one layer, faded in at the top and out at the bottom */
 #game{position:relative}
