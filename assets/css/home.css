@@ -205,3 +205,8 @@
 .side{grid-template-rows:auto auto auto 1fr}
 .hero .side .steam-soon{color:var(--adriatic);border-color:rgba(23,62,74,.55)}
 @media (max-width:1000px){.hero .side .steam-soon{color:var(--linen);border-color:rgba(242,235,221,.5)}}
+
+/* shared haze for About + I–IV: one layer, faded in at the top and out at the bottom */
+#game{position:relative}
+#game>.mist{-webkit-mask-image:linear-gradient(to bottom,#000 0,#000 85%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0,#000 85%,transparent 100%)}
+#game>.mist .a{opacity:.3}#game>.mist .b{opacity:.2}
